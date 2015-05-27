@@ -17,9 +17,7 @@ use Symfony\Bundle\FrameworkBundle\Console\Application;
 use CoreSphere\ConsoleBundle\Executer\CommandExecuter;
 use Symfony\Component\HttpFoundation\Request;
 
-set_time_limit(500);
-ini_set("memory_limit",'500');
-ini_set("max_execution_time",'500');
+const MEMORY_LIMIT = 200;
 
 class ConsoleController extends Controller
 {
@@ -43,6 +41,9 @@ class ConsoleController extends Controller
 
     public function execAction(Request $request)
     {
+        set_time_limit(MEMORY_LIMIT);
+        ini_set("memory_limit",MEMORY_LIMIT);
+        ini_set("max_execution_time",MEMORY_LIMIT);
         $executer = new CommandExecuter($this->get('kernel'));
         $commands = $request->request->get('commands');
         $executedCommands = array();
