@@ -1,5 +1,5 @@
 {
-    "name": "coresphere/console-bundle",
+    "name": "tecnocreaciones/console-bundle",
     "description": "This bundle allows you accessing the symfony2 console via your browser",
     "keywords": ["console","javascript","symfony"],
     "type": "symfony-bundle",
